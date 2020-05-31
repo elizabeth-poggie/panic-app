@@ -1,10 +1,9 @@
-
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 
-export default function Intro({ navigation }) {
-    const [fruit, setFruit] = useState('intro screen');
+export default function Core({ navigation }) {
+    const [fruit, setFruit] = useState('core screen');
     return (
       <View style={styles.container}>
         <Text>{fruit}</Text>

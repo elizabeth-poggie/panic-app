@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home.js';
 import CBT from './CBT.js';
-import {NavBar, Icon} from 'antd-mobile';
 
 const Tab = createBottomTabNavigator();
 

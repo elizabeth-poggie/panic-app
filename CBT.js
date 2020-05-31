@@ -1,6 +1,6 @@
 const users = [
     {
-       name: 'nice'
+       name: 'Lessons...'
     }
    ];
 
@@ -16,6 +16,23 @@ const Stack = createStackNavigator();
 export default function CBT({ navigation }) {
     return (
         <ScrollView>
+            <Card title="Self Care">
+            {
+                users.map((u, i) => {
+                return (
+                    <View key={i} style={styles.user}>
+                    <Tile height={100}
+                    imageSrc={require('./assets/square.png')}
+                    title="Self Care Buckets"
+                    featured
+                    caption="7-10 minutes"
+                    onPress
+                    />
+                    </View>
+                );
+                })
+            }
+            </Card>
             <Card title="Deep Breathing">
             {
                 users.map((u, i) => {
@@ -26,6 +43,7 @@ export default function CBT({ navigation }) {
                     title="Box Breathing"
                     featured
                     caption="7-10 minutes"
+                    onPress
                     />
                     </View>
                 );
@@ -37,7 +55,21 @@ export default function CBT({ navigation }) {
                 users.map((u, i) => {
                 return (
                     <View key={i} style={styles.user}>
-                    <Text style={styles.name}>{u.name}</Text>
+                    <Tile height={100}
+                    imageSrc={require('./assets/square.png')}
+                    title="Grounding Excersize"
+                    featured
+                    caption="15-30 minutes"
+                    onPress
+                    />
+                    <br></br>
+                    <Tile height={100}
+                    imageSrc={require('./assets/square.png')}
+                    title="Active Mindfulness"
+                    featured
+                    caption="15-30 minutes"
+                    onPress
+                    />
                     </View>
                 );
                 })

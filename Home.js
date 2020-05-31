@@ -1,15 +1,25 @@
 import React, {useState} from 'react';
-import { Text, ScrollView, Button } from 'react-native';
+import { Text, ScrollView} from 'react-native';
 import CBT from './CBT.js';
-import { Card, ListItem, Icon } from 'react-native-elements';
+import { Card, Button, ListItem, Icon } from 'react-native-elements';
 
 export default function Home({ navigation }) {
     return (
       <ScrollView>
-          <Text>This does not work yet...</Text>
-            <Button title="I am having an Attack"></Button>
             <Card>
-                
+            <Button title="I am having an Attack"></Button>
+            </Card>
+            <Card>
+                <Text>Self Care Goals</Text>
+            </Card>
+            <Card>
+                <Text>Breathing Goals</Text>
+            </Card>
+            <Card>
+                <Text>Grounding Goals</Text>
+            </Card>
+            <Card>
+                <Text>Mindfulness Goals</Text>
             </Card>
       </ScrollView>
     );
