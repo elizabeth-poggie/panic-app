@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import CBT from './CBT.js';
 
 export default function Home({ navigation }) {
     const [fruit, setFruit] = useState('hello world');
@@ -8,7 +9,7 @@ export default function Home({ navigation }) {
         <Text>{fruit}</Text>
 
         <div>
-        <Button title="CBT" onPress={() => navigation.navigate('CBT')} />
+        <Button title="Intro" onPress={() => navigation.navigate('Intro')} />
         </div>
       </View>
     );
