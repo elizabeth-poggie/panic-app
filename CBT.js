@@ -7,9 +7,9 @@ const users = [
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Card, Tile, ListItem, Button, Icon } from 'react-native-elements'
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, NavigationActions} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Intro from './Intro.js';
+
 
 const Stack = createStackNavigator();
 
@@ -26,7 +26,8 @@ export default function CBT({ navigation }) {
                     title="Self Care Buckets"
                     featured
                     caption="7-10 minutes"
-                    onPress
+                    onPress={ () => navigation.navigate('Lesson1')
+                    }
                     />
                     </View>
                 );

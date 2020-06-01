@@ -9,15 +9,13 @@ import End from './End.js';
 
 const Stack = createStackNavigator();
 
-export default function Lesson() {
+export default function Lesson1() {
   return (
-    <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Intro" component={Intro} />
         <Stack.Screen name="Core" component={Core} />
         <Stack.Screen name="Goal" component={Goal} />
         <Stack.Screen name="End" component={End} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 }
