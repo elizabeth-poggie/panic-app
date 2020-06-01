@@ -1,15 +1,10 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home.js';
 import CBT from './CBT.js';
 import { createStackNavigator } from '@react-navigation/stack';
-import Intro from './Intro.js';
-import Core from './Core.js';
-import Goal from './Goal.js';
-import End from './End.js';
 import Lesson1 from './Lesson1.js';
 
 const Stack = createStackNavigator();

@@ -6,12 +6,7 @@ const users = [
 
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { Card, Tile, ListItem, Button, Icon } from 'react-native-elements'
-import { NavigationContainer, NavigationActions} from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-
-const Stack = createStackNavigator();
+import { Card, Tile, ListItem, Button, Icon } from 'react-native-elements';
 
 export default function CBT({ navigation }) {
     return (
