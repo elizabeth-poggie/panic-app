@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 
 export default function End({ navigation }) {
-    const [fruit, setFruit] = useState('end screen');
+    const [fruit, setFruit] = useState('End Screen. User can repeat the lesson or return home :)');
     return (
       <View style={styles.container}>
         <Text>{fruit}</Text>
