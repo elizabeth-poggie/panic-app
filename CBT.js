@@ -17,11 +17,12 @@ export default function CBT({ navigation }) {
                 return (
                     <View key={i} style={styles.user}>
                     <Tile height={100}
+                    width={800}
                     imageSrc={require('./assets/square.png')}
                     title="Self Care Buckets"
                     featured
                     caption="7-10 minutes"
-                    onPress={ () => navigation.navigate('Lesson1')
+                    onPress={ () => navigation.navigate('Self Care Buckets')
                     }
                     />
                     </View>
@@ -35,6 +36,7 @@ export default function CBT({ navigation }) {
                 return (
                     <View key={i} style={styles.user}>
                     <Tile height={100}
+                    width={800}
                     imageSrc={require('./assets/square.png')}
                     title="Box Breathing"
                     featured
@@ -52,14 +54,15 @@ export default function CBT({ navigation }) {
                 return (
                     <View key={i} style={styles.user}>
                     <Tile height={100}
+                    width={800}
                     imageSrc={require('./assets/square.png')}
                     title="Grounding Excersize"
                     featured
                     caption="15-30 minutes"
                     onPress
                     />
-                    <br></br>
                     <Tile height={100}
+                    width={800}
                     imageSrc={require('./assets/square.png')}
                     title="Active Mindfulness"
                     featured

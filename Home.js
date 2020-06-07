@@ -12,7 +12,8 @@ export default function Home({ navigation }) {
             <Card>
                 <Button title="I am having a panic attack"></Button>
             </Card>
-            <Card>
+            <Card title="Mood rating that will be replaced with something that looks nice later">
+                <Text>Once the user clicks a rating, it will let them make a journal entry.....</Text>
                 <AirbnbRating
                 count={5}
                 reviews={["Awful", "Bad", "OK", "Good", "Amazing"]}
@@ -21,10 +22,13 @@ export default function Home({ navigation }) {
                 />
             </Card>
             <Card>
+                <Text>Goals will appear here as the user completes their lessons.</Text>
+            </Card>
+            <Card>
                 <Text>Self Care Goals</Text>
             </Card>
             <Card>
-                <Text>Breathing Goals</Text>
+                <Text>Breathing Goals. (for example doing an excersize of breathing 2 or 3 times a day)</Text>
             </Card>
             <Card>
                 <Text>Grounding Goals</Text>

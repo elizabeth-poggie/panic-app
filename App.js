@@ -17,7 +17,7 @@ export function Lessons() {
   return (
   <Stack.Navigator>
     <Stack.Screen name="Lessons"  component={CBT} />
-    <Stack.Screen name="Lesson1" component={Lesson1} />
+    <Stack.Screen name="Self Care Buckets" component={Lesson1} />
   </Stack.Navigator>
   );
 }

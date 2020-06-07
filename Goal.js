@@ -7,7 +7,6 @@ export default function Goal({ navigation }) {
     return (
       <View style={styles.container}>
         <Text>{fruit}</Text>
-        <br></br>
         <Button title="Next" onPress={() => navigation.navigate('End')}></Button>
 
       </View>
