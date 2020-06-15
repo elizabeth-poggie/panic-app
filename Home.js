@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Text, ScrollView} from 'react-native';
 import CBT from './CBT.js';
 import Rating from './Rating.js';
+import RatingVersion2 from './RatingVersion2.js'
 import { Card, Button, AirbnbRating } from 'react-native-elements';
 
 // more on ratings here
@@ -15,7 +16,7 @@ export default function Home({ navigation }) {
                 <Button title="I am having a panic attack"></Button>
             </Card>
             <Card>
-                <Rating navigation={navigation}/>
+                <RatingVersion2 navigation={navigation}/>
             </Card>
             <Card>
                 <Text>Goals will appear here as the user completes their lessons.</Text>
