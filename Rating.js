@@ -1,6 +1,7 @@
   
 import React from 'react';
 import { PixelRatio, StyleSheet, Text, View, PanResponder, Animated, TouchableOpacity } from 'react-native';
+import { NavigationActions } from '@react-navigation/native';
 
 const REACTIONS = [
     { label: "Awful", src: require('./assets/rating/worried.png'), bigSrc: require('./assets/rating/worried_big.png') },
@@ -79,10 +80,17 @@ const REACTIONS = [
                   colorOutputRange = ['#999', '#222'];
                 }
   
-  
+                
+
                 return (
+                    
                     // make this go to a "rate your mood page with linking "
-                  <TouchableOpacity onPress={() => {this.updatePan(u); console.log(idx)}} activeOpacity={0.9} key={idx}>
+                  <TouchableOpacity onPress={() => {
+                      this.updatePan(u); 
+                      console.log(idx);
+                      this.props.navigation.navigate('Journal', { screen: 'Entry', params: {index: idx}})
+                    }
+                      } activeOpacity={0.9} key={idx}>
                     <View style={styles.smileyWrap}>
                       <Animated.Image
                         source={reaction.src}
@@ -158,6 +166,7 @@ const REACTIONS = [
       );
     }
   }
+  
   
   const size = 42;
   

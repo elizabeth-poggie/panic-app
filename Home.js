@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
                 <Button title="I am having a panic attack"></Button>
             </Card>
             <Card>
-                <Rating/>
+                <Rating navigation={navigation}/>
             </Card>
             <Card>
                 <Text>Goals will appear here as the user completes their lessons.</Text>

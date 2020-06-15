@@ -26,7 +26,7 @@ export function Lessons() {
 export function JournalEntries() {
   return (
     <Stack.Navigator>
-    <Stack.Screen name="Journal" component={Journal} />
+    <Stack.Screen name="Journals" component={Journal} />
     <Stack.Screen name="Entry" component={Entry} />
     </Stack.Navigator>
   );

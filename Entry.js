@@ -4,11 +4,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 
 
-export default function Entry({ navigation }) {
+export default function Entry({ route, navigation }) {
     
     return (
       <View>
-        <Text>bleh</Text>
+        <Text>{route.params.index}</Text>
       </View>
     );
 }
