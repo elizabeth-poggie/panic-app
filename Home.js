@@ -13,7 +13,7 @@ export default function Home({ navigation }) {
         
       <ScrollView>
             <Card>
-                <Button title="I am having a panic attack"></Button>
+                <Button title="Panic"></Button>
             </Card>
             <Card>
                 <RatingVersion2 navigation={navigation}/>
