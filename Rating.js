@@ -56,10 +56,10 @@ const REACTIONS = [
               How are you feeling?
             </Text>
             
-            <View style={styles.line} />
   
-            <View style={styles.reactions}>
-              {REACTIONS.map((reaction, idx) => {
+            <View style={styles.reactions} >
+              {REACTIONS.map((reaction, idx) => 
+              {
                 const u = idx * DISTANCE;
                 let inputRange = [u-20, u, u+20];
                 let scaleOutputRange = [1, 0.25, 1];
@@ -79,18 +79,11 @@ const REACTIONS = [
                   topOutputRange = [0, 10];
                   colorOutputRange = ['#999', '#222'];
                 }
-  
-                
 
                 return (
-                    
-                    // make this go to a "rate your mood page with linking "
-                  <TouchableOpacity onPress={() => {
-                      this.updatePan(u); 
-                      console.log(idx);
-                      this.props.navigation.navigate('Journal', { screen: 'Entry', params: {index: idx}})
-                    }
-                      } activeOpacity={0.9} key={idx}>
+                  <TouchableOpacity onPress={() => { this.updatePan(u); this.props.navigation.navigate('Journal', { screen: 'Entry', params: {index: idx}})}}
+                    onClick={ () => this.props.navigation.navigate('Journal', { screen: 'Entry', params: {index: idx}})}
+                       activeOpacity={0.9} key={idx}>
                     <View style={styles.smileyWrap}>
                       <Animated.Image
                         source={reaction.src}
