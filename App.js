@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home.js';
 import CBT from './CBT.js';
+import Entry from './Entry.js'
 import Journal from './Journal.js';
 import { createStackNavigator } from '@react-navigation/stack';
 import Lesson1 from './Lesson1.js';
@@ -22,13 +23,22 @@ export function Lessons() {
   );
 }
 
+export function JournalEntries() {
+  return (
+    <Stack.Navigator>
+    <Stack.Screen name="Journal" component={Journal} />
+    <Stack.Screen name="Entry" component={Entry} />
+    </Stack.Navigator>
+  );
+}
+
 export default function Root() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Lessons" component={Lessons} />
-        <Tab.Screen name="Journal" component={Journal} />
+        <Tab.Screen name="Journal" component={JournalEntries} />
       </Tab.Navigator>
     </NavigationContainer>
   );

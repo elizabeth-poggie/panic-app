@@ -146,9 +146,3 @@ const styles = StyleSheet.create({
     paddingTop: 30
   }
 });
-
-/*
-<Card>
-            <Text>Journal entries go here</Text>
-        </Card>
-*/

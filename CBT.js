@@ -4,6 +4,16 @@ const users = [
     }
    ];
 
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      resizeMode: 'contain'
+    }
+  });
+   
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Card, Tile, ListItem, Button, Icon } from 'react-native-elements';
@@ -15,9 +25,9 @@ export default function CBT({ navigation }) {
             {
                 users.map((u, i) => {
                 return (
-                    <View key={i} style={styles.user}>
-                    <Tile height={100}
-                    width={800}
+                    <View key={i}  style={styles.container}>
+                    <Tile 
+                    resizeMode='contain'
                     imageSrc={require('./assets/square.png')}
                     title="Self Care Buckets"
                     featured
@@ -34,9 +44,8 @@ export default function CBT({ navigation }) {
             {
                 users.map((u, i) => {
                 return (
-                    <View key={i} style={styles.user}>
-                    <Tile height={100}
-                    width={800}
+                    <View key={i} style={styles.container}>
+                    <Tile 
                     imageSrc={require('./assets/square.png')}
                     title="Box Breathing"
                     featured
@@ -52,17 +61,15 @@ export default function CBT({ navigation }) {
             {
                 users.map((u, i) => {
                 return (
-                    <View key={i} style={styles.user}>
-                    <Tile height={100}
-                    width={800}
+                    <View key={i} style={styles.container}>
+                    <Tile 
                     imageSrc={require('./assets/square.png')}
                     title="Grounding Excersize"
                     featured
                     caption="15-30 minutes"
                     onPress
                     />
-                    <Tile height={100}
-                    width={800}
+                    <Tile 
                     imageSrc={require('./assets/square.png')}
                     title="Active Mindfulness"
                     featured
@@ -78,7 +85,7 @@ export default function CBT({ navigation }) {
             {
                 users.map((u, i) => {
                 return (
-                    <View key={i} style={styles.user}>
+                    <View key={i} style={styles.container}>
                     <Text style={styles.name}>{u.name}</Text>
                     </View>
                 );
@@ -89,7 +96,7 @@ export default function CBT({ navigation }) {
             {
                 users.map((u, i) => {
                 return (
-                    <View key={i} style={styles.user}>
+                    <View key={i} style={styles.container}>
                     <Text style={styles.name}>{u.name}</Text>
                     </View>
                 );
@@ -100,7 +107,7 @@ export default function CBT({ navigation }) {
             {
                 users.map((u, i) => {
                 return (
-                    <View key={i} style={styles.user}>
+                    <View key={i} style={styles.container}>
                     <Text style={styles.name}>{u.name}</Text>
                     </View>
                 );
@@ -112,11 +119,3 @@ export default function CBT({ navigation }) {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
