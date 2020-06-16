@@ -16,7 +16,10 @@ const Tab = createBottomTabNavigator();
 
 export function Lessons() {
   return (
-  <Stack.Navigator>
+  <Stack.Navigator
+  screenOptions={{
+    headerShown: false
+  }}>
     <Stack.Screen name="Lessons"  component={CBT} />
     <Stack.Screen name="Self Care Buckets" component={Lesson1} />
   </Stack.Navigator>
@@ -25,7 +28,10 @@ export function Lessons() {
 
 export function JournalEntries() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+    screenOptions={{
+      headerShown: false
+    }}>
     <Stack.Screen name="Entries" component={Journal} />
     <Stack.Screen name="Entry" component={Entry} />
     </Stack.Navigator>

@@ -9,7 +9,10 @@ const Stack = createStackNavigator();
 
 export default function Lesson1() {
   return (
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
         <Stack.Screen name="Intro" component={Intro} />
         <Stack.Screen name="Core" component={Core} />
         <Stack.Screen name="Goal" component={Goal} />

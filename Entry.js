@@ -26,6 +26,9 @@ export default function Entry({ route, navigation }) {
             />
             
         </Card>
+        <Card> 
+          <Button title="Edit Buckets" type="outline"></Button>
+        </Card>
 
         <Card>
                 <Button 
