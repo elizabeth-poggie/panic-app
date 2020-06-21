@@ -1,15 +1,35 @@
-import React, {Component} from 'react';
+import React, {Component, ScrollView, TouchableOpacity} from 'react';
 import { StyleSheet, Text, View,FlatList, TextInput } from 'react-native';
 import { Button, Card } from 'react-native-elements';
 
 
 export default class DynamicInputField extends Component {  
+
+  constructor(props) {  
+    super(props);  
+    this.state = {
+      text: '',
+      disabled: false,
+      data: 
+      [
+        {
+          id: 0,
+          title: 'texting a friend'
+        },
+        {
+          id: 1,
+          title: 'treating myself to coffee'
+        }
+      ]
+    }; 
+    this.index = 2; 
+  }  
   
-  renderItem(title) {
+  renderItem(item) {
     return (
       <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
-        <Text>{title}</Text>
-        <Button title="-" type="clear" onPress={index => this.removeItem(index)}></Button>
+        <Text>{item.title}</Text>
+        <Button title="-" type="clear" onPress={index => this.removeItem(item.id)}></Button>
       </View>
     );
   }
@@ -22,48 +42,53 @@ export default class DynamicInputField extends Component {
           placeholder="texting a friend"
           onChangeText={text => onChangeText(text)}
           value={value}
-          style={{width: 250, height:50}}
+          style={{width: 250, height:50}} 
         />
         <Button title="-" type="clear" ></Button>
       </View>
     );
   }
   
-  addItem(item) {
-  
+  addItem() {
+    const newlyAddedValue = {id: this.index, title: this.text}
+    this.setState({
+      disabled: true,
+      valueArray: [...this.state.data, newlyAddedValue]
+    });
+    this.index += 1;
+    this.setState({ disabled: false });
   }
   
-  removeItem({index}) {
-    let dataArray = this.state.data;
-    dataArray.splice(index, 1);
-    this.setState({data: dataArray});
+  removeItem(id) {
+    const newArray = [...this.state.data];
+    newArray.splice(newArray.findIndex(ele => ele.id === id), 1);
+    this.setState(() => {
+      return {
+        data: newArray
+      }
+    });
   }
 
-  constructor(props) {  
-      super(props);  
-      this.state = {
-        text: '',
-        data: 
-        [
-          {
-            id: 0,
-            title: 'texting a friend'
-          },
-          {
-            id: 1,
-            title: 'treating myself to coffee'
-          }
-        ]
-      };  
-  }  
+  render() {
+    return (
+      <Card >
+        <View style={{ flex: 1, padding: 4 }}>
+          {this.state.data.map(item => this.renderItem(item))}
+        </View>
+        <Button title="+" type="outline" disabled={this.state.disabled} onPress={this.addItem}></Button>
+      </Card>
+    );
+  }
+  
 
+  /*
   render() {  
     return (  
       <Card 
       style={{flex: 1, flexDirection: 'column'}}>
         <FlatList
           data={this.state.data}
-          renderItem={({ item }) => this.renderItem(item.title)}
+          renderItem={({ item, index }) => this.renderItem(item.title, index)}
           keyExtractor={(item, index) => index.toString()}
         />
         <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
@@ -78,4 +103,5 @@ export default class DynamicInputField extends Component {
       </Card>
   );
   }  
+  */
 }  
