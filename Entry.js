@@ -23,6 +23,7 @@ export default function Entry({ route, navigation }) {
             placeholder="What's on your mind?"
             onChangeText={text => onChangeText(text)}
             value={value}
+            multiline={true}
             />
             
         </Card>
