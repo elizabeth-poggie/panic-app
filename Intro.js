@@ -15,12 +15,10 @@ class Core extends React.Component {
   render() {
     return (
       <View style={{zIndex: 0}} >
-        <Card title="Social Self Care"> 
-          <Text style={styles.panelHeader}>The Social bucket has to do with people around you, and the connections that you have with them. </Text>
-          <Text style={styles.panelSubtitle}>How can you connect with other people? How can you disconnect when social interactions are getting too much?</Text>
+        <Card title="How do you fill your Social Bucket?"> 
+          <Text style={styles.panelHeader}>This has to do with people around you, and the connections that you have with them. For example, How do you connect with other people and how do you disconnect when social interactions are getting too much? </Text>
         </Card>
         <DynamicInputField/>
-        
       </View>
     );
   }
@@ -31,7 +29,6 @@ export default class Example extends React.Component {
     <View style={styles.panel}>
       <Text style={styles.panelSubtitle}>
       Self Care underlies healthy living in general, and it is particularly relevant for your mental health. For this reason, we’ve put this section before all other Basic Skills—ideally, you should check-in with your current Self Care and establish new, healthy Self Care habits before attempting any other Basic Skills. You won’t become a world-class skater without first buying a pair of skates—and you wouldn’t get to be very good if those skates were made of wood! Similarly, the Basic Skills and other techniques found in this workbook require a solid foundation; in this case the bedrock of anxiety management is Self Care.
-
       </Text>
       <View style={styles.panelButton}>
         <Text style={styles.panelButtonTitle}>Skip Intro</Text>
