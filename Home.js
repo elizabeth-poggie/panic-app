@@ -15,23 +15,11 @@ export default function Home({ navigation }) {
             <Card>
                 <Button title="Panic"></Button>
             </Card>
-            <Card>
+            <Card title="How are you feeling today?">
                 <RatingVersion2 navigation={navigation}/>
             </Card>
             <Card>
                 <Text>Goals will appear here as the user completes their lessons.</Text>
-            </Card>
-            <Card>
-                <Text>Self Care Goals</Text>
-            </Card>
-            <Card>
-                <Text>Breathing Goals. (for example doing an excersize of breathing 2 or 3 times a day)</Text>
-            </Card>
-            <Card>
-                <Text>Grounding Goals</Text>
-            </Card>
-            <Card>
-                <Text>Mindfulness Goals</Text>
             </Card>
       </ScrollView>
     );

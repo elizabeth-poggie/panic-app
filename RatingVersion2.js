@@ -19,7 +19,7 @@ export default class RatingVersion2 extends React.Component {
       }
       
       render () {
-        const buttons = ['Awful', 'Bad', 'OK', 'Good', 'Fantastic']
+        const buttons = ['>:(', ':(', ':|', ':)', '>:)']
         const { selectedIndex } = this.state
       
         return (
