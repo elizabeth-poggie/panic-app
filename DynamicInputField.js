@@ -8,15 +8,17 @@ export default function DynamicInputField () {
   const [value, onChangeText] = React.useState('');
 
     return (
-        <Card title="How do you fill your Social Bucket?">
-          <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between',}}>
+        <Card 
+        title="How do you fill your Social Bucket?"
+        style={{flex: 1, flexDirection: 'column'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
             <TextInput
-              placeholder="Ex: texting family, going on a walk with a friend, going for a coffee alone"
+              placeholder="texting a friend"
               onChangeText={text => onChangeText(text)}
               value={value}
-              style={{width: 500}}
+              style={{width: 250, height:50}}
             />
-            <Button title="-" type="outline"></Button>
+            <Button title="-" type="clear" style={{width: 50, height:50}}></Button>
           </View>
           <Button title="+" type="outline"></Button>
         </Card>
