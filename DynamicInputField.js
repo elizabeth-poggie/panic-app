@@ -8,58 +8,49 @@ export default class DynamicInputField extends Component {
   constructor(props) {  
     super(props);  
     this.state = {
-      text: '',
       disabled: false,
-      data: 
-      [
-        {
-          id: 0,
-          title: 'texting a friend'
-        },
-        {
-          id: 1,
-          title: 'treating myself to coffee'
-        }
-      ]
-    }; 
+      data: this.props.data,
+    }
     this.index = 2; 
     this.addItem = this.addItem.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.removeItem = this.removeItem.bind(this);
+    this.resetItemIds = this.resetItemIds.bind(this);
   }  
 
-  index(id) {
-    this.setState({value: event.target.value});
+  resetItemIds() {
+    for (var i=0; i< this.state.data.length; i++) {
+        this.state.data[i] = {id: i, title: this.state.data[i].title};
+    }
+    console.log(this.state.data);
+  }
+
+  handleInput(id) {
+    return (text) => {
+      const newlyAddedValue = { id: id, title: text }
+      const newArray = this.state.data;
+      newArray[newArray.findIndex(ele => ele.id === id)] = newlyAddedValue;
+      this.setState({
+        data: newArray
+      });
+    }
   }
   
   renderItem(item) {
     return (
-      
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <TextInput
-          onChangeText={text => this.setState({text})}
+          onChangeText={this.handleInput(item.id)}
           value={item.title}
+          placeholder={this.props.example_activity}
         />
         <Button title="-" type="clear" onPress={index => this.removeItem(item.id)}></Button>
       </View>
     );
   }
   
-  add_entry() {
-    const [value, onChangeText] = React.useState('');
-    return (
-      <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
-        <TextInput
-          placeholder="texting a friend"
-          onChangeText={text => onChangeText(text)}
-          value={value}
-          style={{width: 250, height:50}} 
-        />
-        <Button title="-" type="clear" ></Button>
-      </View>
-    );
-  }
-  
   addItem() {
-    const newlyAddedValue = {id: this.state.index, title: ''};
+    const newlyAddedValue = {id: this.index, title: ''};
     this.setState({
       disabled: true,
       data: [...this.state.data, newlyAddedValue]
@@ -69,18 +60,22 @@ export default class DynamicInputField extends Component {
   }
   
   removeItem(id) {
-    const newArray = [...this.state.data];
+    const newArray = this.state.data;
     newArray.splice(newArray.findIndex(ele => ele.id === id), 1);
     this.setState(() => {
       return {
         data: newArray
       }
     });
+    this.resetItemIds();
+    this.index -= 1;
+    // when an item is removed, need to reset all the indexes to be that of the array value
   }
 
   render() {
     return (
-      <Card >
+      <Card title={this.props.title}>
+        <Text>{this.props.details}</Text>
         <View style={{ padding: 4 }}>
           {this.state.data.map(item => this.renderItem(item))}
         </View>
@@ -88,29 +83,4 @@ export default class DynamicInputField extends Component {
       </Card>
     );
   }
-  
-
-  /*
-  render() {  
-    return (  
-      <Card 
-      style={{flex: 1, flexDirection: 'column'}}>
-        <FlatList
-          data={this.state.data}
-          renderItem={({ item, index }) => this.renderItem(item.title, index)}
-          keyExtractor={(item, index) => index.toString()}
-        />
-        <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
-          <TextInput
-            placeholder="texting a friend"
-            onChangeText={text => this.setState({text})}
-            style={{width: 250, height:50}}
-          />
-          <Button title="-" type="clear" style={{width: 50, height:50}}></Button>
-        </View>
-        <Button title="+" type="outline"></Button>
-      </Card>
-  );
-  }  
-  */
 }  

@@ -6,20 +6,83 @@ import {
   Text,
   TouchableWithoutFeedback,
   View,
+  ScrollView
 } from 'react-native'
-import BottomSheet from 'reanimated-bottom-sheet'
-import { Card, Button, AirbnbRating } from 'react-native-elements';
+import BottomSheet from 'reanimated-bottom-sheet';
 import DynamicInputField from './DynamicInputField.js';
 
 class Core extends React.Component {
+  constructor(props) {  
+    super(props);  
+    this.render = this.render.bind(this);
+    this.lesson = [
+      {
+        title:"How do you fill your Social Bucket?",
+        details:"This has to do with people around you, and the connections that you have with them. For example, how do you connect with other people and how do you disconnect when social interactions are getting too much?",
+        example_activity: "Texting a friend",
+        data: [
+          {
+            id: 0,
+            title: ''
+          }
+        ],
+      },
+      {
+        title:"How do you fill your Physical Bucket?",
+        details: "This bucket is primarily focused on physical activity, nutrition, and rest/sleep. For ezample, how are you physically active several times a week? How do you relax?",
+        example_activity: "Taking a walk",
+        data: [
+          {
+            id: 0,
+            title: ''
+          }
+        ],
+      },
+      {
+        title:"How do you fill your Emotional Bucket?",
+        details: "The important part of this bucket is to ensure that you are giving yourself space and permission to feel a range of emotions–both ‘positive’ and ‘negative’. How do you ensure that you laugh? How do you let yourself worry?",
+        example_activity: "Planning ‘Worry Time’",
+        data: [
+          {
+            id: 0,
+            title: ''
+          }
+        ],
+      },
+      {
+        title:"How do you fill your Mental Bucket?",
+        details: "The Mental bucket is about both activating and relaxing your brain. This does not include school, your job, or homework. How can you exercise your brain, for example doing puzzles or learning a language? How do you relax your thinking?",
+        example_activity: "Trying a new recipe",
+        data: [
+          {
+            id: 0,
+            title: ''
+          }
+        ],
+      },
+      {
+        title:"How do you fill your Spiritual Bucket?",
+        details: "The Spiritual bucket is about recognizing things outside of yourself and your own day-to-day life. For example, how do you give yourself 'you time' to recognize what matters most? How do you recognize things outside yourself?",
+        example_activity: "Eating Doritos just cause",
+        data: [
+          {
+            id: 0,
+            title: ''
+          }
+        ],
+      }
+    ]
+  }
+  
   render() {
     return (
-      <View style={{zIndex: 0}} >
-        <Card title="How do you fill your Social Bucket?"> 
-          <Text style={styles.panelHeader}>This has to do with people around you, and the connections that you have with them. For example, How do you connect with other people and how do you disconnect when social interactions are getting too much? </Text>
-        </Card>
-        <DynamicInputField/>
-      </View>
+        <ScrollView style={{zIndex: 0}} >
+          { this.lesson.map((item) => {
+            return (
+              <DynamicInputField details={item.details} title={item.title} example_activity={item.example_activity} data={item.data}/>
+            );
+        })}
+        </ScrollView>
     );
   }
 }

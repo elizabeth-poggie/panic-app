@@ -14,7 +14,7 @@ export default function Entry({ route, navigation }) {
             <RatingVersion2 navigation={navigation} index={route.params.index}/>
         </Card>
         
-        <Card title="Buckets Checklist">
+        <Card title="What did you do for yourself today?">
         </Card>
         
         <Card>
