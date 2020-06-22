@@ -7,6 +7,7 @@ export default class DynamicInputField extends Component {
 
   constructor(props) {  
     super(props);  
+    this.index = 2; 
     this.state = {
       text: '',
       disabled: false,
@@ -22,13 +23,16 @@ export default class DynamicInputField extends Component {
         }
       ]
     }; 
-    this.index = 2; 
   }  
   
   renderItem(item) {
     return (
-      <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
-        <Text>{item.title}</Text>
+      
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <TextInput
+          onChangeText={text => this.setState({text})}
+          value={item.title}
+        />
         <Button title="-" type="clear" onPress={index => this.removeItem(item.id)}></Button>
       </View>
     );
@@ -50,10 +54,10 @@ export default class DynamicInputField extends Component {
   }
   
   addItem() {
-    const newlyAddedValue = {id: this.index, title: this.text}
+    const newlyAddedValue = {id: this.index, title: ''};
     this.setState({
       disabled: true,
-      valueArray: [...this.state.data, newlyAddedValue]
+      data: [...this.state.data, newlyAddedValue]
     });
     this.index += 1;
     this.setState({ disabled: false });
@@ -72,7 +76,7 @@ export default class DynamicInputField extends Component {
   render() {
     return (
       <Card >
-        <View style={{ flex: 1, padding: 4 }}>
+        <View style={{ padding: 4 }}>
           {this.state.data.map(item => this.renderItem(item))}
         </View>
         <Button title="+" type="outline" disabled={this.state.disabled} onPress={this.addItem}></Button>
