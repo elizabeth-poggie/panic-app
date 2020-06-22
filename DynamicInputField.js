@@ -7,7 +7,6 @@ export default class DynamicInputField extends Component {
 
   constructor(props) {  
     super(props);  
-    this.index = 2; 
     this.state = {
       text: '',
       disabled: false,
@@ -23,7 +22,13 @@ export default class DynamicInputField extends Component {
         }
       ]
     }; 
+    this.index = 2; 
+    this.addItem = this.addItem.bind(this);
   }  
+
+  index(id) {
+    this.setState({value: event.target.value});
+  }
   
   renderItem(item) {
     return (
@@ -54,7 +59,7 @@ export default class DynamicInputField extends Component {
   }
   
   addItem() {
-    const newlyAddedValue = {id: this.index, title: ''};
+    const newlyAddedValue = {id: this.state.index, title: ''};
     this.setState({
       disabled: true,
       data: [...this.state.data, newlyAddedValue]
