@@ -6,11 +6,12 @@ const users = [
 
 const workbook = [
     {
-        chapter: "Self Care",
+        chapter_title: "Self Care",
         lessons: [
             {
                 lesson_title: "Self Care Buckets",
                 lesson_length: "7-10 minutes",
+                lesson_component: 'Self Care Buckets',
                 lesson: [
                  {
                    title:"How do you fill your Social Bucket?",
@@ -72,33 +73,37 @@ const workbook = [
              {
                 lesson_title: "Some other Self Care lesson",
                 lesson_length: "???? minutes",
+                lesson_component: 'Self Care Buckets',
                 lesson: []
              }
         ]
     }
     ,
     {
-        chapter: "Breathing",
+        chapter_title: "Breathing",
         lessons: [
             {
                 lesson_title: "Box Breathing",
                 lesson_length: "7-10 minutes",
+                lesson_component: 'Self Care Buckets',
                 lesson: []
             }
         ]
     }
     ,
     {
-        chapter: "Mindfulness",
+        chapter_title: "Mindfulness",
         lessons: [
             {
                 lesson_title: "Grounding Exercise",
                 lesson_length: "15-30 minutes",
+                lesson_component: 'Self Care Buckets',
                 lesson: []
             },
             {
                 lesson_title: "Active Mindfulness",
                 lesson_length: "15-30 minutes",
+                lesson_component: 'Self Care Buckets',
                 lesson: []
             }
         ]
@@ -122,100 +127,26 @@ import { Card, Tile, ListItem, Button, Icon } from 'react-native-elements';
 export default function CBT({ navigation }) {
     return (
         <ScrollView>
-            <Card title="Self Care">
-            {
-                users.map((u, i) => {
+            { workbook.map((chapter) => {
                 return (
-                    <View key={i}  style={styles.container}>
-                    <Tile 
-                    resizeMode='contain'
-                    imageSrc={require('../assets/square.png')}
-                    title="Self Care Buckets"
-                    featured
-                    caption="7-10 minutes"
-                    onPress={ () => navigation.navigate('Self Care Buckets')
-                    }
-                    />
-                    </View>
+                    <Card title={chapter.chapter_title}>
+                        { chapter.lessons.map((lesson, i) => {
+                        return (
+                            <View key={i}  style={styles.container}>
+                            <Tile 
+                            resizeMode='contain'
+                            imageSrc={require('../assets/square.png')}
+                            title={lesson.lesson_title}
+                            featured
+                            caption={lesson.lesson_length}
+                            onPress={ () => navigation.navigate(lesson.lesson_component)
+                            } />
+                            </View>
+                            );
+                        })}
+                    </Card>
                 );
-                })
-            }
-            </Card>
-            <Card title="Deep Breathing">
-            {
-                users.map((u, i) => {
-                return (
-                    <View key={i} style={styles.container}>
-                    <Tile 
-                    imageSrc={require('../assets/square.png')}
-                    title="Box Breathing"
-                    featured
-                    caption="7-10 minutes"
-                    onPress
-                    />
-                    </View>
-                );
-                })
-            }
-            </Card>
-            <Card title="Mindfulness">
-            {
-                users.map((u, i) => {
-                return (
-                    <View key={i} style={styles.container}>
-                    <Tile 
-                    imageSrc={require('../assets/square.png')}
-                    title="Grounding Excersize"
-                    featured
-                    caption="15-30 minutes"
-                    onPress
-                    />
-                    <Tile 
-                    imageSrc={require('../assets/square.png')}
-                    title="Active Mindfulness"
-                    featured
-                    caption="15-30 minutes"
-                    onPress
-                    />
-                    </View>
-                );
-                })
-            }
-            </Card>
-            <Card title="Relaxation">
-            {
-                users.map((u, i) => {
-                return (
-                    <View key={i} style={styles.container}>
-                    <Text style={styles.name}>{u.name}</Text>
-                    </View>
-                );
-                })
-            }
-            </Card>
-            <Card title="Worry Time">
-            {
-                users.map((u, i) => {
-                return (
-                    <View key={i} style={styles.container}>
-                    <Text style={styles.name}>{u.name}</Text>
-                    </View>
-                );
-                })
-            }
-            </Card>
-            <Card title="Time Managment">
-            {
-                users.map((u, i) => {
-                return (
-                    <View key={i} style={styles.container}>
-                    <Text style={styles.name}>{u.name}</Text>
-                    </View>
-                );
-                })
-            }
-            </Card>
-
+            })}
         </ScrollView>
     );
 }
