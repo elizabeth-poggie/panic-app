@@ -3,12 +3,11 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home.js';
-import CBT from './CBT.js';
-import Entry from './Entry.js'
-import Journal from './Journal.js';
+import CBT from './Lessons/CBT.js';
+import Entry from './Journal/Entry.js'
+import Journal from './Journal/Journal.js';
 import { createStackNavigator } from '@react-navigation/stack';
-import Lesson1 from './Lesson1.js';
-import Intro from './Intro.js';
+import SelfCareBuckets from './Lessons/SelfCareBuckets.js';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +20,7 @@ export function Lessons() {
     headerShown: false
   }}>
     <Stack.Screen name="Lessons"  component={CBT} />
-    <Stack.Screen name="Self Care Buckets" component={Intro} />
+    <Stack.Screen name="Self Care Buckets" component={SelfCareBuckets} />
   </Stack.Navigator>
   );
 }

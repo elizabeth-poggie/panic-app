@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import { Text, ScrollView} from 'react-native';
-import CBT from './CBT.js';
-import Rating from './Rating.js';
-import RatingVersion2 from './RatingVersion2.js'
+import RatingVersion2 from './Components/RatingVersion2.js'
 import { Card, Button, AirbnbRating } from 'react-native-elements';
 
 // more on ratings here

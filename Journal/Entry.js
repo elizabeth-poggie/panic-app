@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import { StyleSheet, TextInput, Text, View, CheckBox } from 'react-native';
 import { Card, Button} from 'react-native-elements';
 import { BaseRouter } from '@react-navigation/native';
-import RatingVersion2 from './RatingVersion2.js'
+import RatingVersion2 from '../Components/RatingVersion2.js'
 
 export default function Entry({ route, navigation }) {
     const [value, onChangeText] = React.useState('');

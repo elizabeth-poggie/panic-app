@@ -9,7 +9,7 @@ import {
   ScrollView
 } from 'react-native'
 import BottomSheet from 'reanimated-bottom-sheet';
-import DynamicInputField from './DynamicInputField.js';
+import DynamicInputField from '../Components/DynamicInputField.js';
 
 class Core extends React.Component {
   constructor(props) {  

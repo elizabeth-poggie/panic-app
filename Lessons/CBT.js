@@ -28,7 +28,7 @@ export default function CBT({ navigation }) {
                     <View key={i}  style={styles.container}>
                     <Tile 
                     resizeMode='contain'
-                    imageSrc={require('./assets/square.png')}
+                    imageSrc={require('../assets/square.png')}
                     title="Self Care Buckets"
                     featured
                     caption="7-10 minutes"
@@ -46,7 +46,7 @@ export default function CBT({ navigation }) {
                 return (
                     <View key={i} style={styles.container}>
                     <Tile 
-                    imageSrc={require('./assets/square.png')}
+                    imageSrc={require('../assets/square.png')}
                     title="Box Breathing"
                     featured
                     caption="7-10 minutes"
@@ -63,14 +63,14 @@ export default function CBT({ navigation }) {
                 return (
                     <View key={i} style={styles.container}>
                     <Tile 
-                    imageSrc={require('./assets/square.png')}
+                    imageSrc={require('../assets/square.png')}
                     title="Grounding Excersize"
                     featured
                     caption="15-30 minutes"
                     onPress
                     />
                     <Tile 
-                    imageSrc={require('./assets/square.png')}
+                    imageSrc={require('../assets/square.png')}
                     title="Active Mindfulness"
                     featured
                     caption="15-30 minutes"
