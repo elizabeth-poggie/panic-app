@@ -11,7 +11,7 @@ export default class DynamicInputField extends Component {
       disabled: false,
       data: this.props.data,
     }
-    this.index = 2; 
+    this.index = this.props.data.length; 
     this.addItem = this.addItem.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.removeItem = this.removeItem.bind(this);

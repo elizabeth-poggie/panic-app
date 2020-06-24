@@ -8,7 +8,7 @@ import Entry from './Entry.js'
 import Journal from './Journal.js';
 import { createStackNavigator } from '@react-navigation/stack';
 import Lesson1 from './Lesson1.js';
-
+import Intro from './Intro.js';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +21,7 @@ export function Lessons() {
     headerShown: false
   }}>
     <Stack.Screen name="Lessons"  component={CBT} />
-    <Stack.Screen name="Self Care Buckets" component={Lesson1} />
+    <Stack.Screen name="Self Care Buckets" component={Intro} />
   </Stack.Navigator>
   );
 }
