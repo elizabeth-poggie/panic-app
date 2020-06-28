@@ -1,20 +1,50 @@
 
 import React, {useState} from 'react';
-import { StyleSheet, TextInput, Text, View, CheckBox } from 'react-native';
-import { Card, Button} from 'react-native-elements';
-import { BaseRouter } from '@react-navigation/native';
+import { StyleSheet, TextInput, Text, View, ScrollView} from 'react-native';
+import { Card, Button, CheckBox} from 'react-native-elements';
 import RatingVersion2 from '../Components/RatingVersion2.js'
+
+class Box extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false
+    };
+  }
+
+  render() {
+    return (
+      <CheckBox
+        title={this.props.title}
+        checked={this.state.checked}
+        onPress={() => this.setState({checked: !this.state.checked})}
+      />
+    );
+  }
+}
 
 export default function Entry({ route, navigation }) {
     const [value, onChangeText] = React.useState('');
-    
+    const workbook = require('../Workbook.js');
+    console.log(workbook[0]["lessons"][0].lesson_content.lesson[0].title)
     return (
-      <View>
+      <ScrollView>
         <Card>
             <RatingVersion2 navigation={navigation} index={route.params.index}/>
         </Card>
         
         <Card title="What did you do for yourself today?">
+          {workbook[0]["lessons"][0].lesson_content.lesson.map( (item) => {
+            return (
+              <Card title={item.short_title}>
+                {item.data.map((item) => {
+                  return(
+                    <Box title={item.title}/>
+                  );
+                })}
+              </Card>
+            );
+          })}
         </Card>
         
         <Card>
@@ -28,14 +58,19 @@ export default function Entry({ route, navigation }) {
             
         </Card>
         <Card> 
-          <Button title="Edit Buckets" type="outline"></Button>
+          <Button 
+          title="Edit Buckets" 
+          type="outline"
+          onPress={() => navigation.navigate( 'Lessons', { screen: workbook[0]["lessons"][0].lesson_component, params: {lesson_content: workbook[0]["lessons"][0].lesson_content}})}>
+          </Button>
         </Card>
 
         <Card>
                 <Button 
                 title="Submit"
-                onPress={() => {navigation.navigate('Journal', { screen: 'Entries', params: {textinput: value}}); console.log(value)}}></Button>
+                onPress={() => {navigation.navigate('Journal', { screen: 'Entries', params: {textinput: value}}); console.log(value)}}>
+                </Button>
             </Card>
-      </View>
+      </ScrollView>
     );
 }
