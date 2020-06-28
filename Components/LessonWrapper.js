@@ -1,11 +1,9 @@
 import React from 'react'
 import {
-  Image,
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
-  View,
-  ScrollView
+  View
 } from 'react-native'
 import BottomSheet from 'reanimated-bottom-sheet';
 

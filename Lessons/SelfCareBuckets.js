@@ -1,21 +1,12 @@
 
-import React from 'react'
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableWithoutFeedback,
-  View,
-  ScrollView
-} from 'react-native'
-import BottomSheet from 'reanimated-bottom-sheet';
+import React from 'react';
+import {ScrollView} from 'react-native';
 import DynamicInputField from '../Components/DynamicInputField.js';
 import LessonWrapper from '../Components/LessonWrapper.js'
 
-export default class Core extends React.Component {
+export default class SelfCareBuckets extends React.Component {
   constructor(props) {  
     super(props);  
-    this.render = this.render.bind(this);
   }
   
   render() {
