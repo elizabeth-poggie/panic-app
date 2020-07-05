@@ -29,11 +29,13 @@ export default function Entry({ route, navigation }) {
     console.log(workbook[0]["lessons"][0].lesson_content.lesson[0].title)
     return (
       <ScrollView>
+        <Card title="What did you do for yourself today?"></Card>
+        
         <Card>
             <RatingVersion2 navigation={navigation} index={route.params.index}/>
         </Card>
         
-        <Card title="What did you do for yourself today?">
+        
           {workbook[0]["lessons"][0].lesson_content.lesson.map( (item) => {
             return (
               <Card title={item.short_title}>
@@ -45,7 +47,6 @@ export default function Entry({ route, navigation }) {
               </Card>
             );
           })}
-        </Card>
         
         <Card>
             <TextInput

@@ -39,6 +39,20 @@ const testIDs = {
   weekCalendar: {CONTAINER: 'weekCalendar'}
 };
 
+const entries = [
+  {
+    date: '2020-07-05',
+    mood_index: 2,
+    acivities_completed: [],
+    name: 'I just ate chips all day',
+  },
+  {
+    date: '2020-07-06',
+    mood_index: 2,
+    acivities_completed: [],
+    name: 'I still ate chips all day',
+  }
+];
 
 export default class Journal extends Component {
   constructor(props) {
@@ -55,7 +69,7 @@ export default class Journal extends Component {
         testID={testIDs.agenda.CONTAINER}
         items={this.state.items}
         loadItemsForMonth={this.loadItems.bind(this)}
-        selected={'2017-05-16'}
+        selected={this.timeToString(Date.now())}
         renderItem={this.renderItem.bind(this)}
         renderEmptyDate={this.renderEmptyDate.bind(this)}
         rowHasChanged={this.rowHasChanged.bind(this)}
@@ -79,20 +93,13 @@ export default class Journal extends Component {
 
   loadItems(day) {
     setTimeout(() => {
-      for (let i = -15; i < 85; i++) {
-        const time = day.timestamp + i * 24 * 60 * 60 * 1000;
-        const strTime = this.timeToString(time);
+      entries.map((entry) => {
+        const strTime = entry.date;
         if (!this.state.items[strTime]) {
           this.state.items[strTime] = [];
-          const numItems = Math.floor(Math.random() * 3 + 1);
-          for (let j = 0; j < numItems; j++) {
-            this.state.items[strTime].push({
-              name: 'Item for ' + strTime + ' #' + j,
-              height: Math.max(50, Math.floor(Math.random() * 150))
-            });
-          }
+          this.state.items[strTime].push(entry);
         }
-      }
+      })
       const newItems = {};
       Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
       this.setState({
@@ -105,7 +112,7 @@ export default class Journal extends Component {
     return (
       <TouchableOpacity
         testID={testIDs.agenda.ITEM}
-        style={[styles.item, {height: item.height}]} 
+        style={[styles.item]} 
         onPress={() => Alert.alert(item.name)}
       >
         <Text>{item.name}</Text>
