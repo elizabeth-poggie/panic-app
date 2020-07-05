@@ -14,7 +14,7 @@ module.exports =
                         lesson: [
                         {
                             title:"How do you fill your Social Bucket?",
-                            short_title:"Social",
+                            category:"Social",
                             details:"This has to do with people around you, and the connections that you have with them. For example, how do you connect with other people and how do you disconnect when social interactions are getting too much?",
                             example_activity: "Texting a friend",
                             data: [
@@ -26,7 +26,7 @@ module.exports =
                         },
                         {
                             title:"How do you fill your Physical Bucket?",
-                            short_title:"Phsyical",
+                            category:"Phsyical",
                             details: "This bucket is primarily focused on physical activity, nutrition, and rest/sleep. For ezample, how are you physically active several times a week? How do you relax?",
                             example_activity: "Taking a walk",
                             data: [
@@ -38,7 +38,7 @@ module.exports =
                         },
                         {
                             title:"How do you fill your Emotional Bucket?",
-                            short_title:"Emotional",
+                            category:"Emotional",
                             details: "The important part of this bucket is to ensure that you are giving yourself space and permission to feel a range of emotions–both ‘positive’ and ‘negative’. How do you ensure that you laugh? How do you let yourself worry?",
                             example_activity: "Planning ‘Worry Time’",
                             data: [
@@ -50,7 +50,7 @@ module.exports =
                         },
                         {
                             title:"How do you fill your Mental Bucket?",
-                            short_title:"Mental",
+                            category:"Mental",
                             details: "The Mental bucket is about both activating and relaxing your brain. This does not include school, your job, or homework. How can you exercise your brain, for example doing puzzles or learning a language? How do you relax your thinking?",
                             example_activity: "Trying a new recipe",
                             data: [
@@ -62,7 +62,7 @@ module.exports =
                         },
                         {
                             title:"How do you fill your Spiritual Bucket?",
-                            short_title:"Spirtual",
+                            category:"Spirtual",
                             details: "The Spiritual bucket is about recognizing things outside of yourself and your own day-to-day life. For example, how do you give yourself 'you time' to recognize what matters most? How do you recognize things outside yourself?",
                             example_activity: "Eating Doritos just cause",
                             data: [

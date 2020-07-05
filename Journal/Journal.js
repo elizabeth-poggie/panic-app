@@ -3,17 +3,6 @@ import { Alert, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import {Calendar, LocaleConfig, CalendarList, Agenda} from 'react-native-calendars';
 import { Card, Button, ListItem, Icon } from 'react-native-elements';
 
-LocaleConfig.locales['fr'] = {
-    monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
-    monthNamesShort: ['Janv.','Févr.','Mars','Avril','Mai','Juin','Juil.','Août','Sept.','Oct.','Nov.','Déc.'],
-    dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
-    dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
-    today: 'Aujourd\'hui'
-  };
-
-// if i need to change the language
-// LocaleConfig.defaultLocale = 'fr';
-
 const testIDs = {
   menu: {
     CONTAINER: 'menu',
@@ -42,22 +31,25 @@ const testIDs = {
 const entries = [
   {
     date: '2020-07-05',
-    mood_index: 2,
+    mood_index: ':|',
     acivities_completed: [],
     name: 'I just ate chips all day',
-  },
-  {
-    date: '2020-07-06',
-    mood_index: 2,
-    acivities_completed: [],
-    name: 'I still ate chips all day',
+    activities: [
+      {
+        category: "Emotional",
+        name: "Eating chips"
+      },
+      {
+        category: "Social",
+        name: "Texting Homies"
+      },
+    ]
   }
 ];
 
 export default class Journal extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       items: {}
     };
@@ -69,7 +61,7 @@ export default class Journal extends Component {
         testID={testIDs.agenda.CONTAINER}
         items={this.state.items}
         loadItemsForMonth={this.loadItems.bind(this)}
-        selected={this.timeToString(Date.now())}
+        selected={this.timeToString('2020-07-05')} //Date.now()
         renderItem={this.renderItem.bind(this)}
         renderEmptyDate={this.renderEmptyDate.bind(this)}
         rowHasChanged={this.rowHasChanged.bind(this)}
@@ -115,7 +107,18 @@ export default class Journal extends Component {
         style={[styles.item]} 
         onPress={() => Alert.alert(item.name)}
       >
-        <Text>{item.name}</Text>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <Text style={{width: 36, height: 50, backgroundColor: 'powderblue', padding: 14}}>{item.mood_index}</Text>
+          <View style={{paddingLeft: 10}}>
+          <Text>{item.name}</Text>
+            {item.activities.map((activity) => {
+              return (
+                <Text style={[styles.activity]}>{activity.name}</Text>
+              );
+            })}
+          </View>
+        </View>
+        
       </TouchableOpacity>
     );
   }
@@ -151,5 +154,9 @@ const styles = StyleSheet.create({
     height: 15,
     flex:1,
     paddingTop: 30
+  },
+  activity: {
+    fontSize: 11,
+    color: 'gray',
   }
 });

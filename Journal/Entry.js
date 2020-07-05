@@ -30,22 +30,19 @@ export default function Entry({ route, navigation }) {
     return (
       <ScrollView>
         <Card title="What did you do for yourself today?"></Card>
-        
         <Card>
-            <RatingVersion2 navigation={navigation} index={route.params.index}/>
+          <RatingVersion2 navigation={navigation} index={route.params.index}/>
         </Card>
-        
-        
-          {workbook[0]["lessons"][0].lesson_content.lesson.map( (item) => {
-            return (
-              <Card title={item.short_title}>
-                {item.data.map((item) => {
-                  return(
-                    <Box title={item.title}/>
-                  );
-                })}
-              </Card>
-            );
+        {workbook[0]["lessons"][0].lesson_content.lesson.map( (item) => {
+          return (
+            <Card title={item.category}>
+              {item.data.map((item) => {
+                return(
+                  <Box title={item.title}/>
+                );
+              })}
+            </Card>
+          );
           })}
         
         <Card>
@@ -67,11 +64,11 @@ export default function Entry({ route, navigation }) {
         </Card>
 
         <Card>
-                <Button 
-                title="Submit"
-                onPress={() => {navigation.navigate('Journal', { screen: 'Entries', params: {textinput: value}}); console.log(value)}}>
-                </Button>
-            </Card>
+          <Button 
+          title="Submit"
+          onPress={() => {navigation.navigate('Journal', { screen: 'Entries', params: {textinput: value}}); console.log(value)}}>
+          </Button>
+        </Card>
       </ScrollView>
     );
 }
