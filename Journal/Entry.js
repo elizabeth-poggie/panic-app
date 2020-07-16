@@ -33,7 +33,7 @@ export default function Entry({ route, navigation }) {
         <Card>
           <RatingVersion2 navigation={navigation} index={route.params.index}/>
         </Card>
-        {workbook[0]["lessons"][0].lesson_content.lesson.map( (item) => {
+        {workbook[0]["lessons"][0].lesson_content.lesson.map((item) => {
           return (
             <Card title={item.category}>
               {item.data.map((item) => {

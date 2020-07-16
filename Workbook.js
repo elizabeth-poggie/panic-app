@@ -76,6 +76,23 @@ module.exports =
                     }
             },]
         },
+        {
+            chapter_title: "Breathing",
+            lessons: [
+                {
+                    lesson_title: "Box Breathing",
+                    lesson_length: "7-10 minutes",
+                    lesson_component: 'Box Breathing',
+                    lesson_content: 
+                        {
+                            into: "As you count during your inhale, hold, and exhale your breath, imagine that you are following the edges of a box. Breathe in for a count of 5, tracing the topside of the imaginary box in your mind. Now hold that breath in as you trace down one side of that box for a count of 5. Trace along the bottom of that imaginary box as you gently exhale for a count of 5. Finally, trace up the last side of the box as you hold your breath again, for a count of 5. Repeat. ",
+                            lesson: [
+                                {box: "its a box"}
+                            ]
+                        }
+                }
+            ]
+        },
     // {
     //     chapter_title: "Breathing",
     //     lessons: [

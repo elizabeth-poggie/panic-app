@@ -1,7 +1,7 @@
 import React, {useState, Component} from 'react';
 import { Alert, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import {Calendar, LocaleConfig, CalendarList, Agenda} from 'react-native-calendars';
-import { Card, Button, ListItem, Icon } from 'react-native-elements';
+import { Card, Button, ListItem, Icon, Overlay } from 'react-native-elements';
 
 const testIDs = {
   menu: {
@@ -51,8 +51,19 @@ export default class Journal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: {}
+      items: {},
+      isVisible: false 
     };
+    this.overlay = this.overlay.bind(this)
+  }
+
+  overlay() {
+    <Overlay
+      isVisible={this.state.isVisible}
+      onBackdropPress={() => this.setState({ isVisible: false })}
+    >
+      <Text>Are you sure you want to delete?</Text>
+    </Overlay>
   }
 
   render() {
@@ -100,26 +111,37 @@ export default class Journal extends Component {
     }, 1000);
   }
 
+  // <Text style={{width: 36, height: 50, backgroundColor: 'powderblue', padding: 14}}>{item.mood_index}</Text>
   renderItem(item) {
     return (
-      <TouchableOpacity
-        testID={testIDs.agenda.ITEM}
-        style={[styles.item]} 
-        onPress={() => Alert.alert(item.name)}
-      >
-        <View style={{flex: 1, flexDirection: 'row'}}>
-          <Text style={{width: 36, height: 50, backgroundColor: 'powderblue', padding: 14}}>{item.mood_index}</Text>
-          <View style={{paddingLeft: 10}}>
-          <Text>{item.name}</Text>
-            {item.activities.map((activity) => {
-              return (
-                <Text style={[styles.activity]}>{activity.name}</Text>
-              );
-            })}
-          </View>
+      <View style={[styles.item]}>
+          <View style={{flex:1, flexDirection: 'row', justifyContent: 'space-between' }}>
+            <TouchableOpacity
+            stlye={{flex: 1, flexDirection: 'row'}}
+            testID={testIDs.agenda.ITEM}   
+            onPress={() => this.props.navigation.navigate('Journal', { screen: 'Entry', params: {index: item.mood_index}})}
+            >
+            <View>
+            
+            <View style={{paddingLeft: 10}}>
+            <Text>{item.name}</Text>
+              {item.activities.map((activity) => {
+                return (
+                  <Text style={[styles.activity]}>{activity.name}</Text>
+                );
+              })}
+            </View>
+            </View>
+            
+            </TouchableOpacity>
+            <Button 
+            title="Delete" 
+            style={{paddingLeft: 10}}
+            type="outline"
+            onPress={() => this.overlay()}>
+        </Button>
         </View>
-        
-      </TouchableOpacity>
+      </View>
     );
   }
 
@@ -144,7 +166,6 @@ export default class Journal extends Component {
 const styles = StyleSheet.create({
   item: {
     backgroundColor: 'white',
-    flex: 1,
     borderRadius: 5,
     padding: 10,
     marginRight: 10,
@@ -152,7 +173,7 @@ const styles = StyleSheet.create({
   },
   emptyDate: {
     height: 15,
-    flex:1,
+    
     paddingTop: 30
   },
   activity: {

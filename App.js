@@ -8,6 +8,7 @@ import Entry from './Journal/Entry.js'
 import Journal from './Journal/Journal.js';
 import { createStackNavigator } from '@react-navigation/stack';
 import SelfCareBuckets from './Lessons/SelfCareBuckets.js';
+import BoxBreathing from './Lessons/BoxBreathing.js';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -19,8 +20,9 @@ export function Lessons() {
   screenOptions={{
     headerShown: false
   }}>
-    <Stack.Screen name="Lessons"  component={CBT} />
+    <Stack.Screen name="Lessons" component={CBT} />
     <Stack.Screen name="Self Care Buckets" component={SelfCareBuckets} />
+    <Stack.Screen name="Box Breathing" component={BoxBreathing} />
   </Stack.Navigator>
   );
 }
