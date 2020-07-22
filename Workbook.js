@@ -93,6 +93,43 @@ module.exports =
                 }
             ]
         },
+        {
+            chapter_title: "Mindfulness",
+            lessons: [
+                {
+                    lesson_title: "Grounding",
+                    lesson_length: "15-30 minutes",
+                    lesson_component: 'Grounding',
+                    lesson_content: 
+                        {
+                            into: "make sure you are comfortable and in a place where you are not likely to be disturbed. This practice tends to be shorter in duration, so you may not feel the need to set an alarm (but if you predict that your thoughts will continuously be distracted by the time, you absolutely can). You will slowly ease yourself into the practice by taking one or two minutes to notice any sensations and begin to calm your mind. Start to bring your focus into the present moment. Recognize where your mind is and bring it back to the present if you find it is wandering. ",
+                            lesson: [
+                            {
+                                title:"Take note of five things that you can see around you",
+                                category:"Sight",
+                                details:"Spend a moment really noticing each of the five things that you see. What colour is each object? What texture does it have? How is the light hitting it? Is it moving or stationary? Acknowledge each sensation with passive acceptance. ",
+                                
+                            },
+                            {
+                                title:"Take note of five things that you can hear around you",
+                                category:"Sound",
+                                details: " Feel free to close your eyes if this will help you be more present with each sound. Notice what you notice about each sound. Is the sound loud? Is it pleasant or unpleasant? What quality does the sound have? Sit with each sensation for a moment, just noticing them. ",
+                            },
+                            {
+                                title:"Take note of five things that you can feel",
+                                category:"Feel",
+                                details: " Perhaps you can feel your body resting on a chair or pillow? Is there a breeze where you are? What is the temperature like? Are there any internal sensations, from inside of your body that you can notice? Just be aware of these sensations, as you sit with each sensation in turn. ",
+                            },
+                            {
+                                title:"Notice five things that you can smell and/or taste",
+                                category:"Taste",
+                                details: ". Is this sensation strong or subtle? Pleasant or unpleasant or neutral? Simply notice and sit with each sensation before you move onto the next one",
+                            },
+                            ]
+                        }
+                },]
+            },
+
     // {
     //     chapter_title: "Breathing",
     //     lessons: [

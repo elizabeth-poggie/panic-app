@@ -45,7 +45,7 @@ export default function Root() {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Lessons" component={Lessons} />
-        <Tab.Screen name="Journal" component={JournalEntries} />
+        <Tab.Screen options={{ tabBarButton: () => null, tabBarVisible: false }} name="Journal" component={JournalEntries} />
       </Tab.Navigator>
     </NavigationContainer>
   );

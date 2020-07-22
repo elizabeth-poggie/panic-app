@@ -13,10 +13,8 @@ export default class BoxBreathing extends React.Component {
     render() {
         return (
             <LessonWrapper intro={this.props.route.params.lesson_content.intro}>
-            <View style={{padding: 30, flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch',}}>
-                
-                    <Breathing></Breathing>
-                
+            <View style={{padding: 30, flex: 1, flexDirection: 'column', }}>
+                <Breathing></Breathing>  
             </View>
             </LessonWrapper>
         );
