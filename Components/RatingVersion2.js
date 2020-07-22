@@ -15,7 +15,7 @@ export default class RatingVersion2 extends React.Component {
       updateIndex (selectedIndex) {
         this.setState({selectedIndex})
         // now navigate
-        this.props.navigation.navigate('Journal', { screen: 'Entry', params: {index: selectedIndex}})
+        this.props.navigation.navigate('Entry',{index: selectedIndex})
       }
       
       render () {

@@ -7,8 +7,7 @@ import { Card, Button, AirbnbRating } from 'react-native-elements';
 // https://react-native-elements.github.io/react-native-elements/docs/rating.html
 
 export default function Home({ navigation }) {
-    return (
-        
+    return (  
       <ScrollView>
             <Card>
                 <Button title="Panic"></Button>

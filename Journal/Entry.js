@@ -59,14 +59,14 @@ export default function Entry({ route, navigation }) {
           <Button 
           title="Edit Buckets" 
           type="outline"
-          onPress={() => navigation.navigate( 'Lessons', { screen: workbook[0]["lessons"][0].lesson_component, params: {lesson_content: workbook[0]["lessons"][0].lesson_content}})}>
+          onPress={() => navigation.navigate(workbook[0]["lessons"][0].lesson_component, {lesson_content: workbook[0]["lessons"][0].lesson_content})}>
           </Button>
         </Card>
 
         <Card>
           <Button 
           title="Submit"
-          onPress={() => {navigation.navigate('Journal', { screen: 'Entries', params: {textinput: value}}); console.log(value)}}>
+          onPress={() => {navigation.navigate('Journal', {textinput: value}); console.log(value)}}>
           </Button>
         </Card>
       </ScrollView>
