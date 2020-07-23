@@ -188,7 +188,6 @@ export default class BoxBreathing extends React.Component {
                 <Text style={{fontSize: 20, textAlign: 'center', margin: 10}}>Breath Out</Text>
            </Animated.View>
           </View>
-
             
             <View style={styles.container}>
               <Animated.View style={this.getStyle()} />
