@@ -2,12 +2,13 @@ module.exports =
 
 [
     {
-        chapter_title: "Self Care",
+        chapter_title: "Mindfulness",
         lessons: [
             {
                 lesson_title: "Self Care Buckets",
                 lesson_length: "7-10 minutes",
                 lesson_component: 'Self Care Buckets',
+                lesson_image_path: require("./assets/exercises/selfcare.png"),
                 lesson_content: 
                     {
                         into: "Self Care underlies healthy living in general, and it is particularly relevant for your mental health. For this reason, we’ve put this section before all other Basic Skills—ideally, you should check-in with your current Self Care and establish new, healthy Self Care habits before attempting any other Basic Skills. You won’t become a world-class skater without first buying a pair of skates—and you wouldn’t get to be very good if those skates were made of wood! Similarly, the Basic Skills and other techniques found in this workbook require a solid foundation; in this case the bedrock of anxiety management is Self Care.",
@@ -74,15 +75,50 @@ module.exports =
                         },
                         ]
                     }
-            },]
+            },
+            {
+                lesson_title: "Grounding",
+                lesson_length: "15-30 minutes",
+                lesson_component: 'Grounding',
+                lesson_image_path: require("./assets/exercises/grounding.png"),
+                lesson_content: 
+                    {
+                        into: "make sure you are comfortable and in a place where you are not likely to be disturbed. This practice tends to be shorter in duration, so you may not feel the need to set an alarm (but if you predict that your thoughts will continuously be distracted by the time, you absolutely can). You will slowly ease yourself into the practice by taking one or two minutes to notice any sensations and begin to calm your mind. Start to bring your focus into the present moment. Recognize where your mind is and bring it back to the present if you find it is wandering. ",
+                        lesson: [
+                        {
+                            title:"Take note of five things that you can see around you",
+                            category:"Sight",
+                            details:"Spend a moment really noticing each of the five things that you see. What colour is each object? What texture does it have? How is the light hitting it? Is it moving or stationary? Acknowledge each sensation with passive acceptance. ",
+                            
+                        },
+                        {
+                            title:"Take note of five things that you can hear around you",
+                            category:"Sound",
+                            details: " Feel free to close your eyes if this will help you be more present with each sound. Notice what you notice about each sound. Is the sound loud? Is it pleasant or unpleasant? What quality does the sound have? Sit with each sensation for a moment, just noticing them. ",
+                        },
+                        {
+                            title:"Take note of five things that you can feel",
+                            category:"Feel",
+                            details: " Perhaps you can feel your body resting on a chair or pillow? Is there a breeze where you are? What is the temperature like? Are there any internal sensations, from inside of your body that you can notice? Just be aware of these sensations, as you sit with each sensation in turn. ",
+                        },
+                        {
+                            title:"Notice five things that you can smell and/or taste",
+                            category:"Taste",
+                            details: ". Is this sensation strong or subtle? Pleasant or unpleasant or neutral? Simply notice and sit with each sensation before you move onto the next one",
+                        },
+                        ]
+                    }
+            },
+        ]
         },
         {
-            chapter_title: "Breathing",
+            chapter_title: "Relaxation Therapy",
             lessons: [
                 {
                     lesson_title: "Box Breathing",
                     lesson_length: "7-10 minutes",
                     lesson_component: 'Box Breathing',
+                    lesson_image_path: require("./assets/exercises/breathing.png"),
                     lesson_content: 
                         {
                             into: "As you count during your inhale, hold, and exhale your breath, imagine that you are following the edges of a box. Breathe in for a count of 5, tracing the topside of the imaginary box in your mind. Now hold that breath in as you trace down one side of that box for a count of 5. Trace along the bottom of that imaginary box as you gently exhale for a count of 5. Finally, trace up the last side of the box as you hold your breath again, for a count of 5. Repeat. ",
@@ -94,69 +130,33 @@ module.exports =
             ]
         },
         {
-            chapter_title: "Mindfulness",
+            chapter_title: "Systematic Exposure",
             lessons: [
                 {
-                    lesson_title: "Grounding",
-                    lesson_length: "15-30 minutes",
-                    lesson_component: 'Grounding',
+                    lesson_title: "Fear Ladder",
+                    lesson_length: "7-10 minutes",
+                    lesson_component: 'fear',
+                    lesson_image_path: require("./assets/exercises/fearladder.png"),
                     lesson_content: 
                         {
-                            into: "make sure you are comfortable and in a place where you are not likely to be disturbed. This practice tends to be shorter in duration, so you may not feel the need to set an alarm (but if you predict that your thoughts will continuously be distracted by the time, you absolutely can). You will slowly ease yourself into the practice by taking one or two minutes to notice any sensations and begin to calm your mind. Start to bring your focus into the present moment. Recognize where your mind is and bring it back to the present if you find it is wandering. ",
-                            lesson: [
-                            {
-                                title:"Take note of five things that you can see around you",
-                                category:"Sight",
-                                details:"Spend a moment really noticing each of the five things that you see. What colour is each object? What texture does it have? How is the light hitting it? Is it moving or stationary? Acknowledge each sensation with passive acceptance. ",
-                                
-                            },
-                            {
-                                title:"Take note of five things that you can hear around you",
-                                category:"Sound",
-                                details: " Feel free to close your eyes if this will help you be more present with each sound. Notice what you notice about each sound. Is the sound loud? Is it pleasant or unpleasant? What quality does the sound have? Sit with each sensation for a moment, just noticing them. ",
-                            },
-                            {
-                                title:"Take note of five things that you can feel",
-                                category:"Feel",
-                                details: " Perhaps you can feel your body resting on a chair or pillow? Is there a breeze where you are? What is the temperature like? Are there any internal sensations, from inside of your body that you can notice? Just be aware of these sensations, as you sit with each sensation in turn. ",
-                            },
-                            {
-                                title:"Notice five things that you can smell and/or taste",
-                                category:"Taste",
-                                details: ". Is this sensation strong or subtle? Pleasant or unpleasant or neutral? Simply notice and sit with each sensation before you move onto the next one",
-                            },
-                            ]
+                            
                         }
-                },]
-            },
-
-    // {
-    //     chapter_title: "Breathing",
-    //     lessons: [
-    //         {
-    //             lesson_title: "Box Breathing",
-    //             lesson_length: "7-10 minutes",
-    //             lesson_component: 'Self Care Buckets',
-    //             content: []
-    //         }
-    //     ]
-    // }
-    // ,
-    // {
-    //     chapter_title: "Mindfulness",
-    //     lessons: [
-    //         {
-    //             lesson_title: "Grounding Exercise",
-    //             lesson_length: "15-30 minutes",
-    //             lesson_component: 'Self Care Buckets',
-    //             content: []
-    //         },
-    //         {
-    //             lesson_title: "Active Mindfulness",
-    //             lesson_length: "15-30 minutes",
-    //             lesson_component: 'Self Care Buckets',
-    //             content: []
-    //         }
-    //     ]
-    // } 
+                }
+            ]
+        },
+        {
+            chapter_title: "Cognitive Restructuring",
+            lessons: [
+                {
+                    lesson_title: "Thought Record",
+                    lesson_length: "7-10 minutes",
+                    lesson_component: 'thought',
+                    lesson_image_path: require("./assets/exercises/thought.png"),
+                    lesson_content: 
+                        {
+                            
+                        }
+                }
+            ]
+        },
    ];

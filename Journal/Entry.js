@@ -28,7 +28,7 @@ export default function Entry({ route, navigation }) {
     const workbook = require('../Workbook.js');
     console.log(workbook[0]["lessons"][0].lesson_content.lesson[0].title)
     return (
-      <ScrollView>
+      <ScrollView showsHorizontalScrollIndicator={false}>
         <Card title="What did you do for yourself today?"></Card>
         <Card>
           <RatingVersion2 navigation={navigation} index={route.params.index}/>
