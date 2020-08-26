@@ -1,48 +1,11 @@
 
 // style sheet information
 
-const styles = StyleSheet.create({
-    
-    container: {
-      flex: 1,
-      padding: 30,
-    },
-    category_container: {
-        paddingBottom: 30,
-        overflow: 'hidden',
-    },
-    tile_container: {
-        flex: 1,
-        width: '90%'
-      },
-    category_image: {
-        width: '100%',
-        aspectRatio: 1,
-        overflow: 'hidden',
-    },
-    title: {
-        fontFamily: 'title_font',
-        fontSize: 30,
-        paddingBottom: 10,
-    },
-    tile_header: {
-        fontFamily: 'header_font',
-        position: 'absolute',
-        left: 10,
-        bottom: 15,
-    },
-    tile_paragraph: {
-        fontFamily: 'header_font',
-        position: 'absolute',
-        left: 10,
-        bottom: 0,
-    }
-  });
    
 const workbook = require('../Workbook.js');
-
+import {styles} from '../assets/styles'
 import React from 'react';
-import { StyleSheet, View, ScrollView, Text } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { Card, Tile, } from 'react-native-elements';
 
 export default function CBT({ navigation }) {

@@ -1,8 +1,9 @@
 
 import React, {useState} from 'react';
-import { StyleSheet, TextInput, Text, View, ScrollView} from 'react-native';
-import { Card, Button, CheckBox} from 'react-native-elements';
+import { StyleSheet, TextInput, Text, View, ScrollView, TouchableOpacity} from 'react-native';
+import { Card, Button, CheckBox, Icon} from 'react-native-elements';
 import RatingVersion2 from '../Components/RatingVersion2.js'
+import {styles} from '../assets/styles'
 
 class Box extends React.Component {
   constructor(props) {
@@ -16,7 +17,12 @@ class Box extends React.Component {
     return (
       <CheckBox
         title={this.props.title}
+        checkedIcon='dot-circle-o'
+        uncheckedIcon='circle-o'
+        containerStyle={styles.checkbox}
+        textStyle={styles.paragraph}
         checked={this.state.checked}
+        checkedColor={'#fe8e66'}
         onPress={() => this.setState({checked: !this.state.checked})}
       />
     );
@@ -28,47 +34,59 @@ export default function Entry({ route, navigation }) {
     const workbook = require('../Workbook.js');
     console.log(workbook[0]["lessons"][0].lesson_content.lesson[0].title)
     return (
-      <ScrollView showsHorizontalScrollIndicator={false}>
-        <Card title="What did you do for yourself today?"></Card>
-        <Card>
-          <RatingVersion2 navigation={navigation} index={route.params.index}/>
-        </Card>
+      <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={styles.container}>
+          <Text style={styles.entry_title}>How are you feeling today?</Text>
+        
+        
+        
+          <RatingVersion2 navigation={navigation}/>
+          <Card title="Self Care"
+          titleStyle={styles.title}
+          dividerStyle={{height: 0, marginBottom: 0}}
+          >
         {workbook[0]["lessons"][0].lesson_content.lesson.map((item) => {
           return (
-            <Card title={item.category}>
+            <View>
+              <Text style={styles.header}>{item.category}</Text>
+              
               {item.data.map((item) => {
                 return(
-                  <Box title={item.title}/>
+                  <Box 
+                  title={item.title} 
+                  />
                 );
               })}
-            </Card>
+            </View>
+            
           );
           })}
+           <TouchableOpacity
+            style={[styles.secondary_button, styles.edit_button_location]}
+            onPress={() => navigation.navigate(workbook[0]["lessons"][0].lesson_component, {lesson_content: workbook[0]["lessons"][0].lesson_content})}>
+            <Icon name='wrench'
+              type='font-awesome-5'  
+              size={24} 
+              color='#fe8e66' />
+            </TouchableOpacity>
+          </Card>
         
         <Card>
             <TextInput
-            style={{height: 100}}
+            style={styles.paragraph}
             placeholder="What's on your mind?"
             onChangeText={text => onChangeText(text)}
             value={value}
             multiline={true}
             />
-            
-        </Card>
-        <Card> 
-          <Button 
-          title="Edit Buckets" 
-          type="outline"
-          onPress={() => navigation.navigate(workbook[0]["lessons"][0].lesson_component, {lesson_content: workbook[0]["lessons"][0].lesson_content})}>
-          </Button>
         </Card>
 
-        <Card>
+        <View style={{paddingVertical: 30}}>
           <Button 
           title="Submit"
+          buttonStyle={styles.primary_button}
           onPress={() => {navigation.navigate('Journal', {textinput: value}); console.log(value)}}>
           </Button>
-        </Card>
+        </View>
       </ScrollView>
     );
 }
