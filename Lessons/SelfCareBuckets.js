@@ -12,6 +12,7 @@ export default class SelfCareBuckets extends React.Component {
   }
   
   render() {
+    console.log(this.props.route.params.lesson_content.intro);
     return (
       <LessonWrapper intro={this.props.route.params.lesson_content.intro}>
         <ScrollView style={styles.lesson_container} showsHorizontalScrollIndicator={false}>

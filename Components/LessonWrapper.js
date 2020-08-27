@@ -14,7 +14,8 @@ export default class LessonWrapper extends React.Component {
   
     renderInner = () => (
       <View style={styles.panel}>
-        <Text style={styles.panelSubtitle}>
+        <Text style={[styles.panelHeader, {paddingBottom: 10}]}>Before you Begin</Text>
+        <Text style={styles.paragraph}>
         {this.props.intro}
         </Text>
         <View style={styles.panelButton}>
@@ -39,7 +40,7 @@ export default class LessonWrapper extends React.Component {
         <View style={styles.container}>
           <BottomSheet
             ref={this.bs}
-            snapPoints={[420, 50, 50]}
+            snapPoints={[580, 50, 50]}
             renderContent={this.renderInner}
             renderHeader={this.renderHeader}
             initialSnap={1}
@@ -89,6 +90,12 @@ export default class LessonWrapper extends React.Component {
     },
     panelHeader: {
       alignItems: 'center',
+      fontFamily: 'title_font',
+        fontSize: 30,
+        marginBottom: 0,
+        color: 'black',
+        fontWeight: 'normal',
+        textAlign: 'left',
     },
     panelHandle: {
       width: 40,
@@ -101,10 +108,11 @@ export default class LessonWrapper extends React.Component {
       fontSize: 27,
       height: 35,
     },
-    panelSubtitle: {
-      fontSize: 14,
-      color: 'gray',
-      marginBottom: 10,
+    paragraph: {
+      fontFamily: 'header_font',
+        fontSize: 16,
+        fontWeight: 'normal',
+        paddingBottom: 10,
     },
     panelButton: {
       padding: 20,

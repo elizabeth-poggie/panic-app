@@ -11,7 +11,7 @@ module.exports =
                 lesson_image_path: require("./assets/exercises/selfcare.png"),
                 lesson_content: 
                     {
-                        into: "Self Care underlies healthy living in general, and it is particularly relevant for your mental health. For this reason, we’ve put this section before all other Basic Skills—ideally, you should check-in with your current Self Care and establish new, healthy Self Care habits before attempting any other Basic Skills. You won’t become a world-class skater without first buying a pair of skates—and you wouldn’t get to be very good if those skates were made of wood! Similarly, the Basic Skills and other techniques found in this workbook require a solid foundation; in this case the bedrock of anxiety management is Self Care.",
+                        intro: "Self Care underlies healthy living in general, and it is particularly relevant for your mental health. For this reason, we’ve put this section before all other Basic Skills—ideally, you should check-in with your current Self Care and establish new, healthy Self Care habits before attempting any other Basic Skills. You won’t become a world-class skater without first buying a pair of skates—and you wouldn’t get to be very good if those skates were made of wood! Similarly, the Basic Skills and other techniques found in this workbook require a solid foundation; in this case the bedrock of anxiety management is Self Care.",
                         lesson: [
                         {
                             title:"How do you fill your Social Bucket?",
@@ -83,7 +83,7 @@ module.exports =
                 lesson_image_path: require("./assets/exercises/grounding.png"),
                 lesson_content: 
                     {
-                        into: "make sure you are comfortable and in a place where you are not likely to be disturbed. This practice tends to be shorter in duration, so you may not feel the need to set an alarm (but if you predict that your thoughts will continuously be distracted by the time, you absolutely can). You will slowly ease yourself into the practice by taking one or two minutes to notice any sensations and begin to calm your mind. Start to bring your focus into the present moment. Recognize where your mind is and bring it back to the present if you find it is wandering. ",
+                        intro: "make sure you are comfortable and in a place where you are not likely to be disturbed. This practice tends to be shorter in duration, so you may not feel the need to set an alarm (but if you predict that your thoughts will continuously be distracted by the time, you absolutely can). You will slowly ease yourself into the practice by taking one or two minutes to notice any sensations and begin to calm your mind. Start to bring your focus into the present moment. Recognize where your mind is and bring it back to the present if you find it is wandering. ",
                         lesson: [
                         {
                             title:"Take note of five things that you can see around you",
@@ -121,7 +121,7 @@ module.exports =
                     lesson_image_path: require("./assets/exercises/breathing.png"),
                     lesson_content: 
                         {
-                            into: "As you count during your inhale, hold, and exhale your breath, imagine that you are following the edges of a box. Breathe in for a count of 5, tracing the topside of the imaginary box in your mind. Now hold that breath in as you trace down one side of that box for a count of 5. Trace along the bottom of that imaginary box as you gently exhale for a count of 5. Finally, trace up the last side of the box as you hold your breath again, for a count of 5. Repeat. ",
+                            intro: "As you count during your inhale, hold, and exhale your breath, imagine that you are following the edges of a box. Breathe in for a count of 5, tracing the topside of the imaginary box in your mind. Now hold that breath in as you trace down one side of that box for a count of 5. Trace along the bottom of that imaginary box as you gently exhale for a count of 5. Finally, trace up the last side of the box as you hold your breath again, for a count of 5. Repeat. ",
                             lesson: [
                                 {box: "its a box"}
                             ]
