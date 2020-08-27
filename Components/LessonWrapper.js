@@ -27,7 +27,6 @@ export default class LessonWrapper extends React.Component {
       <View style={styles.header}>
         <View style={styles.panelHeader}>
           <View style={styles.panelHandle} />
-          <Text>Before you Begin</Text>
         </View>
       </View>
     )
@@ -40,7 +39,7 @@ export default class LessonWrapper extends React.Component {
         <View style={styles.container}>
           <BottomSheet
             ref={this.bs}
-            snapPoints={[420, 80, 80]}
+            snapPoints={[420, 50, 50]}
             renderContent={this.renderInner}
             renderHeader={this.renderHeader}
             initialSnap={1}
@@ -59,7 +58,7 @@ export default class LessonWrapper extends React.Component {
     container: {
       flex: 1,
       backgroundColor: 'white',
-      zIndex: 1
+      zIndex: 1,
     },
     box: {
       width: IMAGE_SIZE,
@@ -75,12 +74,16 @@ export default class LessonWrapper extends React.Component {
     panel: {
       height: 600,
       padding: 20,
-      backgroundColor: '#f7f5eee8',
+      backgroundColor: 'white',
     },
     header: {
-      backgroundColor: '#f7f5eee8',
+      backgroundColor: 'white',
       shadowColor: '#000000',
       paddingTop: 20,
+      borderColor: 'rgba(0,0,0,0.2)',
+      borderTopWidth: 2,
+      borderLeftWidth:2, 
+      borderRightWidth: 2,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
     },

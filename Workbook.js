@@ -57,7 +57,7 @@ module.exports =
                             data: [
                                 {
                                 id: 0,
-                                title: 'Working on personal projects'
+                                title: 'Personal projects'
                                 }
                             ],
                         },
@@ -69,7 +69,7 @@ module.exports =
                             data: [
                                 {
                                 id: 0,
-                                title: 'Lying in bed a bit too long to think'
+                                title: 'Lying in bed a bit too long'
                                 }
                             ],
                         },

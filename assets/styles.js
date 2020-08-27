@@ -7,6 +7,12 @@ const styles = StyleSheet.create({
       paddingTop: 45,
       backgroundColor: 'white'
     },
+    lesson_container: {
+      padding: 30,
+      paddingTop: 45,
+      backgroundColor: 'white',
+      zIndex: 0,
+    },
     category_container: {
         paddingBottom: 30,
         overflow: 'hidden',
@@ -101,7 +107,10 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 20,
         bottom: 20,
-    }
+    },
+    dynamic_button_location: {
+        alignSelf: 'center'
+    }, 
   });
 
 export { styles } 
