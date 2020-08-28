@@ -116,7 +116,7 @@ module.exports =
             lessons: [
                 {
                     lesson_title: "Box Breathing",
-                    lesson_length: "7-10 minutes",
+                    lesson_length: "10 minutes",
                     lesson_component: 'Box Breathing',
                     lesson_image_path: require("./assets/exercises/breathing.png"),
                     lesson_content: 
@@ -134,12 +134,32 @@ module.exports =
             lessons: [
                 {
                     lesson_title: "Fear Ladder",
-                    lesson_length: "7-10 minutes",
-                    lesson_component: 'fear',
+                    lesson_length: "10-15 minutes",
+                    lesson_component: 'Fear Ladder',
                     lesson_image_path: require("./assets/exercises/fearladder.png"),
                     lesson_content: 
                         {
-                            
+                            intro: "Rank your feared panic sensations from the least provoking to most. Start with the sensation that is least frightening and once you habituate to it, you can move to the next sensation. Never more to another step until you are fully comfortable with the one you are working on currently. It is important to go at your own pace. ",
+                            lesson: [
+                            {
+                                title:"Start by constructing your fear ladder",
+                                details:"Rank your feared panic sensations starting from the least provoking to most. Ladders differ in size for everyone so start with what you feel most confortable with exposing yourself to and ending with your long-term goal.  ",
+                                example_activity: "Passing a dog",
+                                data: [
+                                    {
+                                        id: 0,
+                                        title: 'Look at a dog in a park'
+                                    },
+                                    {
+                                        id: 1,
+                                        title: 'Pass alongside a dog'
+                                    },
+                                    {
+                                        id: 2,
+                                        title: 'Pet a dog'
+                                    }
+                                ],
+                            },]
                         }
                 }
             ]

@@ -2,6 +2,7 @@ import React, {useState, Component} from 'react';
 import { Alert, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import {Calendar, LocaleConfig, CalendarList, Agenda} from 'react-native-calendars';
 import { Card, Button, ListItem, Icon, Overlay } from 'react-native-elements';
+import {styles} from '../assets/styles'
 
 const testIDs = {
   menu: {
@@ -76,20 +77,7 @@ export default class Journal extends Component {
         renderItem={this.renderItem.bind(this)}
         renderEmptyDate={this.renderEmptyDate.bind(this)}
         rowHasChanged={this.rowHasChanged.bind(this)}
-        // markingType={'period'}
-        // markedDates={{
-        //    '2017-05-08': {textColor: '#43515c'},
-        //    '2017-05-09': {textColor: '#43515c'},
-        //    '2017-05-14': {startingDay: true, endingDay: true, color: 'blue'},
-        //    '2017-05-21': {startingDay: true, color: 'blue'},
-        //    '2017-05-22': {endingDay: true, color: 'gray'},
-        //    '2017-05-24': {startingDay: true, color: 'gray'},
-        //    '2017-05-25': {color: 'gray'},
-        //    '2017-05-26': {endingDay: true, color: 'gray'}}}
-        // monthFormat={'yyyy'}
-        // theme={{calendarBackground: 'red', agendaKnobColor: 'green'}}
-        //renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
-        // hideExtraDays={false}
+        theme={{selectedDayBackgroundColor: '#fe8e66'}}
       />
     );
   }
@@ -134,12 +122,14 @@ export default class Journal extends Component {
             </View>
             
             </TouchableOpacity>
-            <Button 
-            title="Delete" 
-            style={{paddingLeft: 10}}
-            type="outline"
-            onPress={() => this.overlay()}>
-        </Button>
+            <TouchableOpacity
+            style={[styles.secondary_button, styles.edit_button_location, {padding: 10}]}
+            >
+            <Icon name='trash'
+              type='font-awesome-5'  
+              size={24} 
+              color='#fe8e66' />
+            </TouchableOpacity>
         </View>
       </View>
     );
@@ -162,22 +152,3 @@ export default class Journal extends Component {
     return date.toISOString().split('T')[0];
   }
 }
-
-const styles = StyleSheet.create({
-  item: {
-    backgroundColor: 'white',
-    borderRadius: 5,
-    padding: 10,
-    marginRight: 10,
-    marginTop: 17
-  },
-  emptyDate: {
-    height: 15,
-    
-    paddingTop: 30
-  },
-  activity: {
-    fontSize: 11,
-    color: 'gray',
-  }
-});

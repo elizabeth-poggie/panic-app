@@ -9,6 +9,7 @@ import Journal from './Journal/Journal.js';
 import { createStackNavigator } from '@react-navigation/stack';
 import SelfCareBuckets from './Lessons/SelfCareBuckets.js';
 import BoxBreathing from './Lessons/BoxBreathing.js';
+import FearLadder from './Lessons/FearLadder.js'
 import * as Font from 'expo-font';
 import { Icon} from 'react-native-elements';
 const Stack = createStackNavigator();
@@ -58,6 +59,7 @@ export default class Root extends React.Component {
         <Tab.Screen name="Entry" component={Entry} options={{ tabBarButton: () => null, tabBarVisible: false }} />
         <Tab.Screen name="Self Care Buckets" component={SelfCareBuckets} options={{ tabBarButton: () => null, tabBarVisible: false }}/>
         <Tab.Screen name="Box Breathing" component={BoxBreathing} options={{ tabBarButton: () => null, tabBarVisible: false }}/>
+        <Tab.Screen name="Fear Ladder" component={FearLadder} options={{ tabBarButton: () => null, tabBarVisible: false }}/>
       </Tab.Navigator>
     </NavigationContainer>
     );

@@ -111,6 +111,22 @@ const styles = StyleSheet.create({
     dynamic_button_location: {
         alignSelf: 'center'
     }, 
+    item: {
+        backgroundColor: 'white',
+        borderRadius: 5,
+        padding: 10,
+        marginRight: 10,
+        marginTop: 17
+      },
+      emptyDate: {
+        height: 15,
+        
+        paddingTop: 30
+      },
+      activity: {
+        fontSize: 11,
+        color: 'gray',
+      }
   });
 
 export { styles } 

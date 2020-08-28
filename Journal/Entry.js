@@ -4,30 +4,7 @@ import { StyleSheet, TextInput, Text, View, ScrollView, TouchableOpacity} from '
 import { Card, Button, CheckBox, Icon} from 'react-native-elements';
 import RatingVersion2 from '../Components/RatingVersion2.js'
 import {styles} from '../assets/styles'
-
-class Box extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: false
-    };
-  }
-
-  render() {
-    return (
-      <CheckBox
-        title={this.props.title}
-        checkedIcon='dot-circle-o'
-        uncheckedIcon='circle-o'
-        containerStyle={styles.checkbox}
-        textStyle={styles.paragraph}
-        checked={this.state.checked}
-        checkedColor={'#fe8e66'}
-        onPress={() => this.setState({checked: !this.state.checked})}
-      />
-    );
-  }
-}
+import Box from '../Components/Box.js'
 
 export default function Entry({ route, navigation }) {
     const [value, onChangeText] = React.useState('');
@@ -36,13 +13,11 @@ export default function Entry({ route, navigation }) {
     return (
       <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={styles.container}>
           <Text style={styles.entry_title}>How are you feeling today?</Text>
-        
-        
-        
           <RatingVersion2 navigation={navigation}/>
           <Card title="Self Care"
           titleStyle={styles.title}
           dividerStyle={{height: 0, marginBottom: 0}}
+          containerStyle={{padding:25}}
           >
         {workbook[0]["lessons"][0].lesson_content.lesson.map((item) => {
           return (

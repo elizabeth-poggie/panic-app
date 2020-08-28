@@ -6,10 +6,14 @@ import {
   View
 } from 'react-native'
 import BottomSheet from 'reanimated-bottom-sheet';
+import { Button, Icon } from 'react-native-elements';
 
 export default class LessonWrapper extends React.Component {
     constructor(props) {
       super(props);
+      this.state = {
+        bs: React.createRef()
+      }
     }
   
     renderInner = () => (
@@ -18,9 +22,6 @@ export default class LessonWrapper extends React.Component {
         <Text style={styles.paragraph}>
         {this.props.intro}
         </Text>
-        <View style={styles.panelButton}>
-          <Text style={styles.panelButtonTitle}>Skip Intro</Text>
-        </View>  
       </View>
     )
   
@@ -32,18 +33,17 @@ export default class LessonWrapper extends React.Component {
       </View>
     )
   
-    bs = React.createRef()
-  
     render() {
       return (
         
         <View style={styles.container}>
           <BottomSheet
             ref={this.bs}
+            initialSnap={1}
+            enabledManualSnapping={true}
             snapPoints={[580, 50, 50]}
             renderContent={this.renderInner}
             renderHeader={this.renderHeader}
-            initialSnap={1}
           />
           <TouchableWithoutFeedback onPress={() => this.bs.current.snapTo(0)}>
             {this.props.children}
