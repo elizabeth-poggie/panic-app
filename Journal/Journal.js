@@ -72,6 +72,7 @@ export default class Journal extends Component {
       <Agenda
         testID={testIDs.agenda.CONTAINER}
         items={this.state.items}
+        style={styles.header}
         loadItemsForMonth={this.loadItems.bind(this)}
         selected={this.timeToString('2020-07-05')} //Date.now()
         renderItem={this.renderItem.bind(this)}
@@ -112,10 +113,10 @@ export default class Journal extends Component {
             <View>
             
             <View style={{paddingLeft: 10}}>
-            <Text>{item.name}</Text>
+            <Text style={styles.header}>{item.name}</Text>
               {item.activities.map((activity) => {
                 return (
-                  <Text style={[styles.activity]}>{activity.name}</Text>
+                  <Text style={[styles.paragraph, {color: 'gray'}]}>{activity.name}</Text>
                 );
               })}
             </View>
@@ -123,7 +124,7 @@ export default class Journal extends Component {
             
             </TouchableOpacity>
             <TouchableOpacity
-            style={[styles.secondary_button, styles.edit_button_location, {padding: 10}]}
+            style={[styles.secondary_button, styles.edit_button_location, {padding: 10, marginVertical: 10}]}
             >
             <Icon name='trash'
               type='font-awesome-5'  
