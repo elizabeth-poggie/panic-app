@@ -6,7 +6,7 @@ Developed and researched by Elizabeth Poggie
 
 ### Research
 
-[View the paper here]: https://elizabeth-poggie.github.io/elizabethpoggie/projects/panic/
+[View the paper here](https://elizabeth-poggie.github.io/elizabethpoggie/projects/panic/)
 
 
 ### TLDR
