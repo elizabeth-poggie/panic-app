@@ -17,7 +17,6 @@ export default function Entry({ route, navigation }) {
           <Card title="Self Care"
           titleStyle={styles.title}
           dividerStyle={{height: 0, marginBottom: 0}}
-          containerStyle={{padding:25}}
           >
         {workbook[0]["lessons"][0].lesson_content.lesson.map((item) => {
           return (

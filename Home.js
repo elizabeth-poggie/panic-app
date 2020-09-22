@@ -40,7 +40,7 @@ export default function Home({ navigation }) {
               <Card title={lesson.lesson_title}
                 titleStyle={styles.title}
                 dividerStyle={{height: 0, marginBottom: 0}}
-                containerStyle={{padding:25}}
+                containerStyle={{paddingHorizontal:35}}
               >
               {lesson.lesson_content.lesson.map((item) => {
                 return (
@@ -55,7 +55,7 @@ export default function Home({ navigation }) {
                   </View>
                 );})}
                   <TouchableOpacity
-                    style={[styles.secondary_button, styles.edit_button_location]}
+                    style={[styles.secondary_button, {position: 'absolute', top: 0, right: -20}]}
                     onPress={() => navigation.navigate(les_com, {lesson_content: les_cont})}>
                     <Icon name='wrench'
                       type='font-awesome-5'  
